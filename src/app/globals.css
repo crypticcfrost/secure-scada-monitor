@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  transition: background 0.3s, color 0.3s;
+}
+
+button {
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.node-unauthorized-flash {
+  animation: flash 1s infinite;
+}
+
+@keyframes flash {
+  0% { background-color: red; }
+  50% { background-color: white; }
+  100% { background-color: red; }
+}
+
+@keyframes pulse {
+  0% {
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-opacity: 0.5;
+  }
+  100% {
+    stroke-opacity: 1;
+  }
+}
+
+.node-failure-flash {
+  animation: orange-pulse 1s infinite;
+}
+
+@keyframes orange-pulse {
+  0% {
+    box-shadow: 0 0 5px 2px orange;
+  }
+  50% {
+    box-shadow: 0 0 20px 5px orange;
+  }
+  100% {
+    box-shadow: 0 0 5px 2px orange;
+  }
+}
+
+@keyframes red-pulse {
+  0% {
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-opacity: 0.5;
+  }
+  100% {
+    stroke-opacity: 1;
+  }
+}
+
+.node-unauthorized-flash {
+  animation: unauthorized-pulse 1s infinite;
+}
+
+@keyframes unauthorized-pulse {
+  0% {
+    box-shadow: 0 0 5px 2px red;
+  }
+  50% {
+    box-shadow: 0 0 20px 5px red;
+  }
+  100% {
+    box-shadow: 0 0 5px 2px red;
+  }
+}
